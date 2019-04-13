@@ -3,7 +3,7 @@
     "PDFJekku": {
       "commandName": "Executable",
       "executablePath": "$(TargetPath)",
-      "commandLineArgs": "--js=$(ProjectDir)Jekku.js --out=$(TargetDir)Jekku.pdf"
+      "commandLineArgs": "--js=$(SolutionDir)JavaScript\\payload.js --out=$(SolutionDir)jekku.pdf"
     }
   }
 }

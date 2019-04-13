@@ -5,17 +5,20 @@ using System.IO;
 
 namespace PDFJekku
 {
+    /// <summary>
+    /// Inserts JavaScript into an existing PDF document or creates a new blank PDF.
+    /// </summary>
     internal static class Program
     {
-        internal class Options
+        internal sealed class Options
         {
-            [Option("js", Required = true, HelpText = "Path to JavaScript file")]
-            public string JavaScript { get; set; }
-
-            [Option("pdf", Required = false, HelpText = "Path to existing PDF file")]
+            [Option("pdf", Required = false, HelpText = "Path to existing PDF file. Omit to create a blank new PDF with the JS.")]
             public string PdfFile { get; set; }
 
-            [Option("out", Required = true, HelpText = "Output path for resulting PDF file")]
+            [Option("js", Required = true, HelpText = "Path to JavaScript file.")]
+            public string JavaScript { get; set; }
+
+            [Option("out", Required = true, HelpText = "Output path for resulting PDF file.")]
             public string Out { get; set; }
         }
 
@@ -37,7 +40,7 @@ namespace PDFJekku
             }
             catch (Exception e)
             {
-                Console.WriteLine($"FUBAR {e.Message}: {e.StackTrace}");
+                Console.WriteLine($"{e.Message}: {e.StackTrace}");
             }
         }
     }
