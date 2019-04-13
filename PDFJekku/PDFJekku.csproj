@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Version>0.0.1</Version>
+    <Authors>visuve</Authors>
+    <Company />
+    <Description>Inject JavaScript auto open action into a PDF file</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BitMiracle.Docotic.Pdf" Version="5.8.9425" />
+    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+  </ItemGroup>
+
+</Project>

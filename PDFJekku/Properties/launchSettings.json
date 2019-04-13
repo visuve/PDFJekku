@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PDFJekku": {
+      "commandName": "Executable",
+      "executablePath": "$(TargetPath)",
+      "commandLineArgs": "--js=$(ProjectDir)Jekku.js --out=$(TargetDir)Jekku.pdf"
+    }
+  }
+}
