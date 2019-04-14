@@ -18,12 +18,14 @@ parser.add_argument(
     "--out", type=str,  required=True, help="Output path for resulting PDF file")
 
 args = parser.parse_args()
-
 writer = PyPDF3.PdfFileWriter()
+merge = args.pdf is not None
 
-if args.pdf is not None:
+if merge:
     reader = PyPDF3.PdfFileReader(args.pdf, strict=False)
-    writer.cloneDocumentFromReader(reader)
+    # writer.cloneDocumentFromReader(reader) # This doesn't work in a way any sane person would assume.
+    writer.appendPagesFromReader(reader)
+    writer.addBlankPage()
 
 with open(args.js) as js_file:
     js_content = js_file.read()
